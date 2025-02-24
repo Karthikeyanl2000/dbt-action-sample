@@ -5,13 +5,17 @@
 my_new_project2:
   outputs:
     dev:
-      type: postgres
-      host: localhost
-      user: _user_
-      pass: _password_
-      port: 5432
-      dbname: tutorial
-      schema: dbt_tutorial
+      type: sqlserver
+      driver: "ODBC Driver 18 for SQL Server"
+      host: 192.168.29.250
+      user: Sales_Login
+      pass: gotoz
+      port: 1433
+      database: Sales_DB
+      schema: dbo
+      threads: 1
+      encrypted: false
+      trust_cert: true
   target: dev
 
 my_new_project: # this needs to match the profile: in your dbt_project.yml file
